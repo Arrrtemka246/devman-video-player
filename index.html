@@ -42,6 +42,9 @@
       .control-button[hidden] {
         display: none;
       }
+      .controls-spacer {
+        flex-grow: 1;
+      }
     </style>
   </head>
   <body>
@@ -55,6 +58,10 @@
         </button>
         <button class="control-button js-volume-button" type="button" aria-label="Включить звук" hidden>
           <i class="fa fa-volume-off" aria-hidden="true"></i>
+        </button>
+        <div class="controls-spacer"></div>
+        <button class="control-button js-fullscreen-button" type="button" aria-label="На весь экран">
+          <i class="fa fa-expand" aria-hidden="true"></i>
         </button>
       </div>
     </main>

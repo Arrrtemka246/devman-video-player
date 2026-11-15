@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Упражнение с hover</title>
+  <style>
+    .button-wrapper { width: 100px; height: 100px; background-color: green; display: flex; align-items: center; justify-content: center; }
+    .animated-button { background-color: red; color: white; transition: background-color 300ms ease-in; }
+    .button-wrapper:hover .animated-button { background-color: blue; transition-timing-function: ease-out; }
+  </style>
+</head>
+<body>
+  <h1>Анимация внутри контейнера</h1>
+  <div class="button-wrapper"><button class="animated-button" type="button">Кнопка</button></div>
+</body>
+</html>

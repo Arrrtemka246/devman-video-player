@@ -6,46 +6,8 @@
     <title>ГОСТФильм — видеоплеер</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <style>
-      .video-player {
-        width: 800px;
-        height: 600px;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-      }
-      .video-surface {
-        flex: 1 1 0;
-        min-height: 0;
-      }
-      .control-button {
-        border: none;
-        background-color: transparent;
-        color: white;
-        cursor: pointer;
-        font-size: 20px;
-        flex: 0 0 48px;
-        min-block-size: 48px;
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .player-controls {
-        background-color: black;
-        display: flex;
-        flex: 0 0 auto;
-        align-items: center;
-        gap: 4px;
-      }
-      .control-button[hidden] {
-        display: none;
-      }
-      .controls-spacer {
-        flex-grow: 1;
-      }
-    </style>
+    <link rel="stylesheet" href="vendor/normalize.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <main class="video-player" id="player" aria-label="Видеоплеер ГОСТФильм">
@@ -63,7 +25,15 @@
         <button class="control-button js-volume-button" type="button" aria-label="Включить звук" hidden>
           <i class="fa fa-volume-off" aria-hidden="true"></i>
         </button>
-        <div class="controls-spacer"></div>
+        <span class="time-label current-time js-current-time" role="timer" aria-label="Прошло времени">0:00:00</span>
+        <div class="progress-seek js-progress" role="group" aria-label="Перемотка видео">
+          <div class="progress-track">
+            <div class="progress-fill js-progress-slider">
+              <div class="progress-knob"></div>
+            </div>
+          </div>
+        </div>
+        <span class="time-label js-duration" role="timer" aria-label="Продолжительность">0:00:00</span>
         <button class="control-button js-fullscreen-button" type="button" aria-label="На весь экран">
           <i class="fa fa-expand" aria-hidden="true"></i>
         </button>
